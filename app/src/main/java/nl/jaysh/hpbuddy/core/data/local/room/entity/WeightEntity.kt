@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import nl.jaysh.hpbuddy.core.data.local.room.typeconverter.LocalDateTimeTypeConverter
+import nl.jaysh.hpbuddy.core.data.local.room.converter.LocalDateTimeConverter
 import nl.jaysh.hpbuddy.core.domain.model.measurementunit.Gram
 import java.time.LocalDateTime
 
@@ -14,6 +14,6 @@ data class WeightEntity(
     @ColumnInfo(name = "weight")
     val weight: Gram,
     @ColumnInfo(name = "measured_at")
-    @TypeConverters(LocalDateTimeTypeConverter::class)
+    @TypeConverters(LocalDateTimeConverter::class)
     val measuredAt: LocalDateTime,
 )

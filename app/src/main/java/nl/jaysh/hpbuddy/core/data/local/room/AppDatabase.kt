@@ -6,7 +6,8 @@ import androidx.room.TypeConverters
 import nl.jaysh.hpbuddy.core.data.local.room.dao.WeightDao
 import nl.jaysh.hpbuddy.core.data.local.room.entity.PersonEntity
 import nl.jaysh.hpbuddy.core.data.local.room.entity.WeightEntity
-import nl.jaysh.hpbuddy.core.data.local.room.typeconverter.LocalDateTimeTypeConverter
+import nl.jaysh.hpbuddy.core.data.local.room.converter.LocalDateTimeConverter
+import nl.jaysh.hpbuddy.core.data.local.room.converter.UnitTypeConverter
 
 @Database(
     entities = [
@@ -16,7 +17,10 @@ import nl.jaysh.hpbuddy.core.data.local.room.typeconverter.LocalDateTimeTypeConv
     version = 1,
     exportSchema = false,
 )
-@TypeConverters(LocalDateTimeTypeConverter::class)
+@TypeConverters(
+    LocalDateTimeConverter::class,
+    UnitTypeConverter::class,
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun weightDao(): WeightDao
 }

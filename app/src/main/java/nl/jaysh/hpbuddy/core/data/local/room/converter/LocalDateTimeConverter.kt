@@ -1,10 +1,10 @@
-package nl.jaysh.hpbuddy.core.data.local.room.typeconverter
+package nl.jaysh.hpbuddy.core.data.local.room.converter
 
 import androidx.room.TypeConverter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class LocalDateTimeTypeConverter {
+class LocalDateTimeConverter {
     private val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
 
     @TypeConverter
