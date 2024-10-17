@@ -35,8 +35,9 @@ fun HomeBottomNavigation(navController: NavHostController) {
         remember {
             listOf(
                 NavigationBarItemContent.Dashboard,
-                NavigationBarItemContent.Food,
                 NavigationBarItemContent.Journal,
+                NavigationBarItemContent.Food,
+                NavigationBarItemContent.Activity,
                 NavigationBarItemContent.Settings,
             )
         }
