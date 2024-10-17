@@ -16,12 +16,12 @@ subprojects {
         kotlin {
             target("**/*.kt")
             targetExclude("**/build/**")
-            ktfmt("0.52").googleStyle()
+            ktlint()
         }
 
         kotlinGradle {
             target("*.gradle.kts")
-            ktfmt("0.52").googleStyle()
+            ktlint()
         }
     }
 

@@ -15,23 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun FoodScreenPreview() = HpbuddyTheme {
-  FoodScreenContent(state = FoodViewModelState(), onEvent = {})
-}
+private fun FoodScreenPreview() =
+    HpbuddyTheme {
+        FoodScreenContent(state = FoodViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun FoodScreen(viewModel: FoodViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  FoodScreenContent(state = state, onEvent = viewModel::onEvent)
+    FoodScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
-private fun FoodScreenContent(state: FoodViewModelState, onEvent: (FoodViewModelEvent) -> Unit) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Food") },
-  )
+private fun FoodScreenContent(
+    state: FoodViewModelState,
+    onEvent: (FoodViewModelEvent) -> Unit,
+) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Food") },
+    )
 }

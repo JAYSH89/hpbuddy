@@ -15,26 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun OnboardingScreenPreview() = HpbuddyTheme {
-  OnboardingScreenContent(state = OnboardingViewModelState(), onEvent = {})
-}
+private fun OnboardingScreenPreview() =
+    HpbuddyTheme {
+        OnboardingScreenContent(state = OnboardingViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun OnboardingScreen(viewModel: OnboardingViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  OnboardingScreenContent(state = state, onEvent = viewModel::onEvent)
+    OnboardingScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
 private fun OnboardingScreenContent(
-  state: OnboardingViewModelState,
-  onEvent: (OnboardingViewModelEvent) -> Unit,
+    state: OnboardingViewModelState,
+    onEvent: (OnboardingViewModelEvent) -> Unit,
 ) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Onboarding") },
-  )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Onboarding") },
+    )
 }

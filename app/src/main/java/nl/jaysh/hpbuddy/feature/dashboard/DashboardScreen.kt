@@ -15,26 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun DashboardScreenPreview() = HpbuddyTheme {
-  DashboardScreenContent(state = DashboardViewModelState(), onEvent = {})
-}
+private fun DashboardScreenPreview() =
+    HpbuddyTheme {
+        DashboardScreenContent(state = DashboardViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  DashboardScreenContent(state = state, onEvent = viewModel::onEvent)
+    DashboardScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
 private fun DashboardScreenContent(
-  state: DashboardViewModelState,
-  onEvent: (DashboardViewModelEvent) -> Unit,
+    state: DashboardViewModelState,
+    onEvent: (DashboardViewModelEvent) -> Unit,
 ) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Dashboard") },
-  )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Dashboard") },
+    )
 }

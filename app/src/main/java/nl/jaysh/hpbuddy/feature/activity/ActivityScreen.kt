@@ -15,26 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun ActivityScreenPreview() = HpbuddyTheme {
-  ActivityScreenContent(state = ActivityViewModelState(), onEvent = {})
-}
+private fun ActivityScreenPreview() =
+    HpbuddyTheme {
+        ActivityScreenContent(state = ActivityViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun ActivityScreen(viewModel: ActivityViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  ActivityScreenContent(state = state, onEvent = viewModel::onEvent)
+    ActivityScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
 private fun ActivityScreenContent(
-  state: ActivityViewModelState,
-  onEvent: (ActivityViewModelEvent) -> Unit,
+    state: ActivityViewModelState,
+    onEvent: (ActivityViewModelEvent) -> Unit,
 ) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Activity") },
-  )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Activity") },
+    )
 }

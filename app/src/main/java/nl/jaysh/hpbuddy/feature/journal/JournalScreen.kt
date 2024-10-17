@@ -15,26 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun JournalScreenPreview() = HpbuddyTheme {
-  JournalScreenContent(state = JournalViewModelState(), onEvent = {})
-}
+private fun JournalScreenPreview() =
+    HpbuddyTheme {
+        JournalScreenContent(state = JournalViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun JournalScreen(viewModel: JournalViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  JournalScreenContent(state = state, onEvent = viewModel::onEvent)
+    JournalScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
 private fun JournalScreenContent(
-  state: JournalViewModelState,
-  onEvent: (JournalViewModelEvent) -> Unit,
+    state: JournalViewModelState,
+    onEvent: (JournalViewModelEvent) -> Unit,
 ) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Journal") },
-  )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Journal") },
+    )
 }

@@ -15,26 +15,27 @@ import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @Preview
 @Composable
-private fun SettingsScreenPreview() = HpbuddyTheme {
-  SettingsScreenContent(state = SettingsViewModelState(), onEvent = {})
-}
+private fun SettingsScreenPreview() =
+    HpbuddyTheme {
+        SettingsScreenContent(state = SettingsViewModelState(), onEvent = {})
+    }
 
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel = hiltViewModel()) {
-  val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
-  SettingsScreenContent(state = state, onEvent = viewModel::onEvent)
+    SettingsScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
 private fun SettingsScreenContent(
-  state: SettingsViewModelState,
-  onEvent: (SettingsViewModelEvent) -> Unit,
+    state: SettingsViewModelState,
+    onEvent: (SettingsViewModelEvent) -> Unit,
 ) {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center,
-    content = { Text(text = "Settings") },
-  )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        content = { Text(text = "Settings") },
+    )
 }
