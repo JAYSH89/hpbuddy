@@ -34,7 +34,22 @@ android {
 
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
+    }
+
+    productFlavors {
+        create("inMemory") {
+            dimension = "implementation"
+            applicationIdSuffix = ".inMemory"
+            versionNameSuffix = "-inMemory"
+        }
+
+        create("production") {
+            dimension = "implementation"
         }
     }
 
