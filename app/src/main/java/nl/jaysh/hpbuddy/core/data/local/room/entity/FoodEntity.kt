@@ -7,7 +7,7 @@ import androidx.room.TypeConverters
 import nl.jaysh.hpbuddy.core.data.local.room.converter.UnitTypeConverter
 import nl.jaysh.hpbuddy.core.domain.model.UnitType
 
-@Entity
+@Entity(tableName = "food")
 data class FoodEntity(
     @PrimaryKey val id: Long,
     @ColumnInfo(name = "name")
