@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">hpbuddy</string>
+    <string name="bottom_bar_dashboard">Dashboard</string>
+    <string name="bottom_bar_settings">Settings</string>
+    <string name="bottom_bar_food">Food</string>
+    <string name="bottom_bar_journal">Journal</string>
 </resources>
