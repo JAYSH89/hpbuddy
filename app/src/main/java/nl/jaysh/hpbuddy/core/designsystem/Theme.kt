@@ -1,4 +1,4 @@
-package nl.jaysh.hpbuddy.ui.theme
+package nl.jaysh.hpbuddy.core.designsystem
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

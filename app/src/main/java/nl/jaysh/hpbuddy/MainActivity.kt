@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
-import nl.jaysh.hpbuddy.ui.theme.HpbuddyTheme
+import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

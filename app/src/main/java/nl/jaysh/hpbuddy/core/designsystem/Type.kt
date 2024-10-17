@@ -1,4 +1,4 @@
-package nl.jaysh.hpbuddy.ui.theme
+package nl.jaysh.hpbuddy.core.designsystem
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
