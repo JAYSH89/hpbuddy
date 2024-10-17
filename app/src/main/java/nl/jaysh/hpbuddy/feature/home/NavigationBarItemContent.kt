@@ -14,6 +14,13 @@ sealed class NavigationBarItemContent(
     data object Dashboard : NavigationBarItemContent(
         route = Destination.DASHBOARD,
         title = R.string.bottom_bar_dashboard,
+        selectedIcon = R.drawable.dashboard,
+        unselectedIcon = R.drawable.outline_dashboard,
+    )
+
+    data object Activity : NavigationBarItemContent(
+        route = Destination.ACTIVITY,
+        title = R.string.bottom_bar_activity,
         selectedIcon = R.drawable.calendar,
         unselectedIcon = R.drawable.outline_calendar,
     )

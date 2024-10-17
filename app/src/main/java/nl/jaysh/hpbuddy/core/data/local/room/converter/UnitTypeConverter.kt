@@ -4,7 +4,6 @@ import androidx.room.TypeConverter
 import nl.jaysh.hpbuddy.core.domain.model.UnitType
 
 class UnitTypeConverter {
-
     @TypeConverter
     fun fromUnitType(unitType: UnitType): String {
         return unitType.name
