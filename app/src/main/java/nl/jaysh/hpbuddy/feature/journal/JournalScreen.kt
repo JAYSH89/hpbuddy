@@ -13,13 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
-@Preview
-@Composable
-private fun JournalScreenPreview() =
-    HpbuddyTheme {
-        JournalScreenContent(state = JournalViewModelState(), onEvent = {})
-    }
-
 @Composable
 fun JournalScreen(viewModel: JournalViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -38,4 +31,14 @@ private fun JournalScreenContent(
         verticalArrangement = Arrangement.Center,
         content = { Text(text = "Journal") },
     )
+}
+
+// PREVIEWS
+
+@Preview
+@Composable
+private fun JournalScreenPreview() {
+    HpbuddyTheme {
+        JournalScreenContent(state = JournalViewModelState(), onEvent = {})
+    }
 }

@@ -13,13 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
-@Preview
-@Composable
-private fun SettingsScreenPreview() =
-    HpbuddyTheme {
-        SettingsScreenContent(state = SettingsViewModelState(), onEvent = {})
-    }
-
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -38,4 +31,14 @@ private fun SettingsScreenContent(
         verticalArrangement = Arrangement.Center,
         content = { Text(text = "Settings") },
     )
+}
+
+// PREVIEWS
+
+@Preview
+@Composable
+private fun SettingsScreenPreview() {
+    HpbuddyTheme {
+        SettingsScreenContent(state = SettingsViewModelState(), onEvent = {})
+    }
 }

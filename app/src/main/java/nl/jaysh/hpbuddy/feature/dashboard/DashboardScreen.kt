@@ -13,13 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
-@Preview
-@Composable
-private fun DashboardScreenPreview() =
-    HpbuddyTheme {
-        DashboardScreenContent(state = DashboardViewModelState(), onEvent = {})
-    }
-
 @Composable
 fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -38,4 +31,14 @@ private fun DashboardScreenContent(
         verticalArrangement = Arrangement.Center,
         content = { Text(text = "Dashboard") },
     )
+}
+
+// PREVIEWS
+
+@Preview
+@Composable
+private fun DashboardScreenPreview() {
+    HpbuddyTheme {
+        DashboardScreenContent(state = DashboardViewModelState(), onEvent = {})
+    }
 }

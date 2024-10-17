@@ -13,13 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
-@Preview
-@Composable
-private fun FoodScreenPreview() =
-    HpbuddyTheme {
-        FoodScreenContent(state = FoodViewModelState(), onEvent = {})
-    }
-
 @Composable
 fun FoodScreen(viewModel: FoodViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -38,4 +31,14 @@ private fun FoodScreenContent(
         verticalArrangement = Arrangement.Center,
         content = { Text(text = "Food") },
     )
+}
+
+// PREVIEWS
+
+@Preview
+@Composable
+private fun FoodScreenPreview() {
+    HpbuddyTheme {
+        FoodScreenContent(state = FoodViewModelState(), onEvent = {})
+    }
 }
