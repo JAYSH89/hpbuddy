@@ -8,11 +8,15 @@ import nl.jaysh.hpbuddy.core.data.local.room.entity.PersonEntity
 import nl.jaysh.hpbuddy.core.data.local.room.entity.WeightEntity
 import nl.jaysh.hpbuddy.core.data.local.room.converter.LocalDateTimeConverter
 import nl.jaysh.hpbuddy.core.data.local.room.converter.UnitTypeConverter
+import nl.jaysh.hpbuddy.core.data.local.room.dao.FoodDao
+import nl.jaysh.hpbuddy.core.data.local.room.dao.PersonDao
+import nl.jaysh.hpbuddy.core.data.local.room.entity.FoodEntity
 
 @Database(
     entities = [
         WeightEntity::class,
         PersonEntity::class,
+        FoodEntity::class,
     ],
     version = 1,
     exportSchema = false,
@@ -23,4 +27,6 @@ import nl.jaysh.hpbuddy.core.data.local.room.converter.UnitTypeConverter
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun weightDao(): WeightDao
+    abstract fun personDao(): PersonDao
+    abstract fun foodDao(): FoodDao
 }
