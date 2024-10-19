@@ -42,6 +42,13 @@ android {
     }
 
     productFlavors {
+        flavorDimensions.add("implementation")
+        create("staging") {
+            dimension = "implementation"
+            applicationIdSuffix = ".staging"
+            versionNameSuffix = "-staging"
+        }
+
         create("inMemory") {
             dimension = "implementation"
             applicationIdSuffix = ".inMemory"
