@@ -20,6 +20,8 @@ data class FoodEntity(
     val fats: Double,
     @ColumnInfo(name = "amount")
     val amount: Double,
+    @ColumnInfo(name = "favourite")
+    val favourite: Boolean,
     @ColumnInfo(name = "unit_type")
     @TypeConverters(UnitTypeConverter::class)
     val unitType: UnitType,
