@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import nl.jaysh.hpbuddy.feature.activity.ActivityScreen
 import nl.jaysh.hpbuddy.feature.dashboard.DashboardScreen
 import nl.jaysh.hpbuddy.feature.food.FoodScreen
 import nl.jaysh.hpbuddy.feature.journal.JournalScreen
@@ -26,6 +27,10 @@ fun HomeNavHost(
 
         composable(Destination.FOOD) {
             FoodScreen()
+        }
+
+        composable(Destination.ACTIVITY) {
+            ActivityScreen()
         }
 
         composable(Destination.SETTINGS) {
