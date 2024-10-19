@@ -20,16 +20,13 @@ import nl.jaysh.hpbuddy.core.ui.navigation.HomeNavHost
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun HomeScreen(
-    rootNavController: NavController,
-    homeNavController: NavHostController = rememberNavController(),
-) = Column(
+fun HomeScreen(rootNavController: NavController, homeNavController: NavHostController = rememberNavController()) = Column(
     modifier =
-        Modifier
-            .fillMaxSize()
-            .background(color = MaterialTheme.colorScheme.background)
-            .statusBarsPadding()
-            .imePadding(),
+    Modifier
+        .fillMaxSize()
+        .background(color = MaterialTheme.colorScheme.background)
+        .statusBarsPadding()
+        .imePadding(),
 ) {
     Scaffold(
         bottomBar = {
@@ -41,14 +38,10 @@ fun HomeScreen(
 }
 
 @Composable
-private fun App(
-    contentPadding: PaddingValues,
-    rootNavController: NavController,
-    homeNavController: NavHostController,
-) = Column(
+private fun App(contentPadding: PaddingValues, rootNavController: NavController, homeNavController: NavHostController) = Column(
     modifier =
-        Modifier
-            .fillMaxSize()
-            .padding(contentPadding),
+    Modifier
+        .fillMaxSize()
+        .padding(contentPadding),
     content = { HomeNavHost(rootNavController, homeNavController) },
 )

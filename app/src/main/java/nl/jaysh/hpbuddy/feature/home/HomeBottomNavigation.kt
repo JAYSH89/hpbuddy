@@ -71,7 +71,8 @@ private fun RowScope.BottomNavigationItem(
     navController: NavHostController,
 ) {
     val selected =
-        currentDestination?.hierarchy
+        currentDestination
+            ?.hierarchy
             ?.any { it.route == navigationBarItemContent.route } == true
 
     val navigationBarItemColors =
@@ -97,11 +98,11 @@ private fun RowScope.BottomNavigationItem(
         icon = {
             Icon(
                 painter =
-                    if (selected) {
-                        painterResource(navigationBarItemContent.selectedIcon)
-                    } else {
-                        painterResource(navigationBarItemContent.unselectedIcon)
-                    },
+                if (selected) {
+                    painterResource(navigationBarItemContent.selectedIcon)
+                } else {
+                    painterResource(navigationBarItemContent.unselectedIcon)
+                },
                 contentDescription = stringResource(navigationBarItemContent.title),
             )
         },
@@ -117,11 +118,7 @@ private fun RowScope.BottomNavigationItem(
 }
 
 @Composable
-private fun BottomNavigationLabel(
-    modifier: Modifier = Modifier,
-    text: String,
-    selected: Boolean,
-) = Column(
+private fun BottomNavigationLabel(modifier: Modifier = Modifier, text: String, selected: Boolean) = Column(
     modifier = modifier,
     horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -129,14 +126,14 @@ private fun BottomNavigationLabel(
     Text(text = text, style = MaterialTheme.typography.labelSmall)
     Box(
         modifier =
-            Modifier
-                .size(4.dp)
-                .background(
-                    color =
-                        MaterialTheme.colorScheme.error.copy(
-                            alpha = if (selected) 1.0f else 0.0f,
-                        ),
-                    shape = CircleShape,
+        Modifier
+            .size(4.dp)
+            .background(
+                color =
+                MaterialTheme.colorScheme.error.copy(
+                    alpha = if (selected) 1.0f else 0.0f,
                 ),
+                shape = CircleShape,
+            ),
     )
 }

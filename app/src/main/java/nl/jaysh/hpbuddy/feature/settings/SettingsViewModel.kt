@@ -8,17 +8,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SettingsViewModel
-    @Inject
-    constructor() : ViewModel() {
-        private val _state = MutableStateFlow(SettingsViewModelState())
-        val state: StateFlow<SettingsViewModelState> = _state
+@Inject
+constructor() : ViewModel() {
+    private val _state = MutableStateFlow(SettingsViewModelState())
+    val state: StateFlow<SettingsViewModelState> = _state
 
-        fun onEvent(event: SettingsViewModelEvent) {
-            when (event) {
-                SettingsViewModelEvent.SampleEvent -> {}
-            }
+    fun onEvent(event: SettingsViewModelEvent) {
+        when (event) {
+            SettingsViewModelEvent.SampleEvent -> {}
         }
     }
+}
 
 sealed interface SettingsViewModelEvent {
     data object SampleEvent : SettingsViewModelEvent

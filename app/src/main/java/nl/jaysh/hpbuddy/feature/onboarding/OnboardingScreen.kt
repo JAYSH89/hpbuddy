@@ -13,13 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nl.jaysh.hpbuddy.core.designsystem.HpbuddyTheme
 
-@Preview
-@Composable
-private fun OnboardingScreenPreview() =
-    HpbuddyTheme {
-        OnboardingScreenContent(state = OnboardingViewModelState(), onEvent = {})
-    }
-
 @Composable
 fun OnboardingScreen(viewModel: OnboardingViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -28,14 +21,21 @@ fun OnboardingScreen(viewModel: OnboardingViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun OnboardingScreenContent(
-    state: OnboardingViewModelState,
-    onEvent: (OnboardingViewModelEvent) -> Unit,
-) {
+private fun OnboardingScreenContent(state: OnboardingViewModelState, onEvent: (OnboardingViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         content = { Text(text = "Onboarding") },
     )
+}
+
+// PREVIEWS
+
+@Preview
+@Composable
+private fun OnboardingScreenPreview() {
+    HpbuddyTheme {
+        OnboardingScreenContent(state = OnboardingViewModelState(), onEvent = {})
+    }
 }

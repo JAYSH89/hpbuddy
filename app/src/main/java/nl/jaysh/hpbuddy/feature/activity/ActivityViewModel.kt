@@ -8,17 +8,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ActivityViewModel
-    @Inject
-    constructor() : ViewModel() {
-        private val _state = MutableStateFlow(ActivityViewModelState())
-        val state: StateFlow<ActivityViewModelState> = _state
+@Inject
+constructor() : ViewModel() {
+    private val _state = MutableStateFlow(ActivityViewModelState())
+    val state: StateFlow<ActivityViewModelState> = _state
 
-        fun onEvent(event: ActivityViewModelEvent) {
-            when (event) {
-                ActivityViewModelEvent.SampleEvent -> {}
-            }
+    fun onEvent(event: ActivityViewModelEvent) {
+        when (event) {
+            ActivityViewModelEvent.SampleEvent -> {}
         }
     }
+}
 
 sealed interface ActivityViewModelEvent {
     data object SampleEvent : ActivityViewModelEvent
