@@ -17,11 +17,8 @@ subprojects {
             target("**/*.kt")
             targetExclude("**/build/**")
             ktlint()
-        }
-
-        kotlinGradle {
-            target("*.gradle.kts")
-            ktlint()
+                .setEditorConfigPath("$rootDir/.editorconfig")
+                .editorConfigOverride(mapOf("no-line-break-before-assignment" to "disabled"))
         }
     }
 

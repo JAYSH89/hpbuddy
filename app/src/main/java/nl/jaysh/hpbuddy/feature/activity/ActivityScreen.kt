@@ -21,10 +21,7 @@ fun ActivityScreen(viewModel: ActivityViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun ActivityScreenContent(
-    state: ActivityViewModelState,
-    onEvent: (ActivityViewModelEvent) -> Unit,
-) {
+private fun ActivityScreenContent(state: ActivityViewModelState, onEvent: (ActivityViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

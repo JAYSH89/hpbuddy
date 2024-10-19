@@ -21,10 +21,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun OnboardingScreenContent(
-    state: OnboardingViewModelState,
-    onEvent: (OnboardingViewModelEvent) -> Unit,
-) {
+private fun OnboardingScreenContent(state: OnboardingViewModelState, onEvent: (OnboardingViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

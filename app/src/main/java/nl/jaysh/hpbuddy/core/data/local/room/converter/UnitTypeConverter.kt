@@ -5,12 +5,8 @@ import nl.jaysh.hpbuddy.core.domain.model.UnitType
 
 class UnitTypeConverter {
     @TypeConverter
-    fun fromUnitType(unitType: UnitType): String {
-        return unitType.name
-    }
+    fun fromUnitType(unitType: UnitType): String = unitType.name
 
     @TypeConverter
-    fun toUnitType(unitTypeString: String): UnitType {
-        return UnitType.valueOf(unitTypeString)
-    }
+    fun toUnitType(unitTypeString: String): UnitType = UnitType.valueOf(unitTypeString)
 }

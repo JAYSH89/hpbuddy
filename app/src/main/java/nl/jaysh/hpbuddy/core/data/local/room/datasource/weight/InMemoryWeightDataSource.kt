@@ -5,5 +5,5 @@ import javax.inject.Singleton
 
 @Singleton
 class InMemoryWeightDataSource
-    @Inject
-    constructor() : LocalWeightDataSource
+@Inject
+constructor() : LocalWeightDataSource

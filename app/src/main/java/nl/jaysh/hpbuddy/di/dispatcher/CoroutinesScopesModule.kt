@@ -19,10 +19,10 @@ annotation class ApplicationScope
 @InstallIn(SingletonComponent::class)
 @Module
 object CoroutinesScopesModule {
+
     @Singleton
     @ApplicationScope
     @Provides
-    fun providesCoroutineScope(
-        @DefaultDispatcher defaultDispatcher: CoroutineDispatcher,
-    ): CoroutineScope = CoroutineScope(SupervisorJob() + defaultDispatcher)
+    fun providesCoroutineScope(@DefaultDispatcher defaultDispatcher: CoroutineDispatcher): CoroutineScope =
+        CoroutineScope(SupervisorJob() + defaultDispatcher)
 }

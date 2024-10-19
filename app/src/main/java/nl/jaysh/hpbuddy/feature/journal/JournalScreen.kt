@@ -21,10 +21,7 @@ fun JournalScreen(viewModel: JournalViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun JournalScreenContent(
-    state: JournalViewModelState,
-    onEvent: (JournalViewModelEvent) -> Unit,
-) {
+private fun JournalScreenContent(state: JournalViewModelState, onEvent: (JournalViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

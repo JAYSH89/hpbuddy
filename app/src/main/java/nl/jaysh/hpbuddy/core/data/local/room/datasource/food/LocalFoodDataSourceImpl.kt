@@ -5,5 +5,5 @@ import javax.inject.Singleton
 
 @Singleton
 class LocalFoodDataSourceImpl
-    @Inject
-    constructor() : LocalFoodDataSource
+@Inject
+constructor() : LocalFoodDataSource

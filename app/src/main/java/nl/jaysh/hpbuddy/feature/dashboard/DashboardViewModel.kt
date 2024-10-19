@@ -8,17 +8,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DashboardViewModel
-    @Inject
-    constructor() : ViewModel() {
-        private val _state = MutableStateFlow(DashboardViewModelState())
-        val state: StateFlow<DashboardViewModelState> = _state
+@Inject
+constructor() : ViewModel() {
+    private val _state = MutableStateFlow(DashboardViewModelState())
+    val state: StateFlow<DashboardViewModelState> = _state
 
-        fun onEvent(event: DashboardViewModelEvent) {
-            when (event) {
-                DashboardViewModelEvent.SampleEvent -> {}
-            }
+    fun onEvent(event: DashboardViewModelEvent) {
+        when (event) {
+            DashboardViewModelEvent.SampleEvent -> {}
         }
     }
+}
 
 sealed interface DashboardViewModelEvent {
     data object SampleEvent : DashboardViewModelEvent

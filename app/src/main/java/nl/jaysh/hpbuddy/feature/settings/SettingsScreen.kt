@@ -21,10 +21,7 @@ fun SettingsScreen(viewModel: SettingsViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun SettingsScreenContent(
-    state: SettingsViewModelState,
-    onEvent: (SettingsViewModelEvent) -> Unit,
-) {
+private fun SettingsScreenContent(state: SettingsViewModelState, onEvent: (SettingsViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -8,17 +8,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FoodViewModel
-    @Inject
-    constructor() : ViewModel() {
-        private val _state = MutableStateFlow(FoodViewModelState())
-        val state: StateFlow<FoodViewModelState> = _state
+@Inject
+constructor() : ViewModel() {
+    private val _state = MutableStateFlow(FoodViewModelState())
+    val state: StateFlow<FoodViewModelState> = _state
 
-        fun onEvent(event: FoodViewModelEvent) {
-            when (event) {
-                FoodViewModelEvent.SampleEvent -> {}
-            }
+    fun onEvent(event: FoodViewModelEvent) {
+        when (event) {
+            FoodViewModelEvent.SampleEvent -> {}
         }
     }
+}
 
 sealed interface FoodViewModelEvent {
     data object SampleEvent : FoodViewModelEvent

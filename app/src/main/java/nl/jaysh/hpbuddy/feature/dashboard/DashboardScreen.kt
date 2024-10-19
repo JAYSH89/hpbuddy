@@ -21,10 +21,7 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun DashboardScreenContent(
-    state: DashboardViewModelState,
-    onEvent: (DashboardViewModelEvent) -> Unit,
-) {
+private fun DashboardScreenContent(state: DashboardViewModelState, onEvent: (DashboardViewModelEvent) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

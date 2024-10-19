@@ -22,31 +22,25 @@ import javax.inject.Singleton
 object DataSourceModule {
     @Provides
     @Singleton
-    fun providesLocalFoodDataSource(): LocalFoodDataSource {
-        return if (BuildConfig.FLAVOR == "inMemory") {
-            InMemoryFoodDataSource()
-        } else {
-            LocalFoodDataSourceImpl()
-        }
+    fun providesLocalFoodDataSource(): LocalFoodDataSource = if (BuildConfig.FLAVOR == "inMemory") {
+        InMemoryFoodDataSource()
+    } else {
+        LocalFoodDataSourceImpl()
     }
 
     @Provides
     @Singleton
-    fun providesLocalPersonDataSource(): LocalPersonDataSource {
-        return if (BuildConfig.FLAVOR == "inMemory") {
-            InMemoryPersonDataSource()
-        } else {
-            LocalPersonDataSourceImpl()
-        }
+    fun providesLocalPersonDataSource(): LocalPersonDataSource = if (BuildConfig.FLAVOR == "inMemory") {
+        InMemoryPersonDataSource()
+    } else {
+        LocalPersonDataSourceImpl()
     }
 
     @Provides
     @Singleton
-    fun providesLocalWeightDataSource(): LocalWeightDataSource {
-        return if (BuildConfig.FLAVOR == "inMemory") {
-            InMemoryWeightDataSource()
-        } else {
-            LocalWeightDataSourceImpl()
-        }
+    fun providesLocalWeightDataSource(): LocalWeightDataSource = if (BuildConfig.FLAVOR == "inMemory") {
+        InMemoryWeightDataSource()
+    } else {
+        LocalWeightDataSourceImpl()
     }
 }

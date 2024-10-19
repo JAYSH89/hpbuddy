@@ -16,15 +16,9 @@ import javax.inject.Singleton
 object DatabaseModule {
     @Provides
     @Singleton
-    fun providesAppDatabase(
-        @ApplicationContext context: Context,
-    ): AppDatabase {
-        return databaseBuilder(
-            context = context,
-            klass = AppDatabase::class.java,
-            name = DATABASE_NAME,
-        )
-            .fallbackToDestructiveMigration() // for dev purposes - migrate properly in prod
-            .build()
-    }
+    fun providesAppDatabase(@ApplicationContext context: Context): AppDatabase = databaseBuilder(
+        context = context,
+        klass = AppDatabase::class.java,
+        name = DATABASE_NAME,
+    ).fallbackToDestructiveMigration().build()
 }

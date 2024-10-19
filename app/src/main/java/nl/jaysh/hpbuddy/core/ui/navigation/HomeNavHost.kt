@@ -12,10 +12,7 @@ import nl.jaysh.hpbuddy.feature.journal.JournalScreen
 import nl.jaysh.hpbuddy.feature.settings.SettingsScreen
 
 @Composable
-fun HomeNavHost(
-    rootNavController: NavController,
-    homeNavController: NavHostController,
-) {
+fun HomeNavHost(rootNavController: NavController, homeNavController: NavHostController) {
     NavHost(navController = homeNavController, startDestination = Destination.DASHBOARD) {
         composable(Destination.DASHBOARD) {
             DashboardScreen()
